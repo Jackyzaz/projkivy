@@ -1,0 +1,46 @@
+<LoginForm>:
+    username_label: username_label
+    username_input: username_input
+    password_label: password_label
+    password_input: password_input
+
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 1  # Background color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [50, 50, 50, 50]
+        spacing: 20
+        size_hint: (0.8, 0.8)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Label:
+            id: username_label
+            text: 'Username:'
+            size_hint_y: None
+            height: '40dp'
+
+        TextInput:
+            id: username_input
+            size_hint_y: None
+            height: '40dp'
+            multiline: False
+            on_text_validate: root.ids.password_input.focus = True
+
+        Label:
+            id: password_label
+            text: 'Password:'
+            size_hint_y: None
+            height: '40dp'
+
+        TextInput:
+            id: password_input
+            password: True
+            size_hint_y: None
+            height: '40dp'
+            multiline: False
+            on_text_validate: root.validate_login()
