@@ -1,5 +1,5 @@
- pygments 
- kivy_deps.sdl2 
- kivy_deps.glew 
- kivy_deps.angle
- kivy
+pygments 
+kivy_deps.sdl2 
+kivy_deps.glew 
+kivy_deps.angle
+kivy
